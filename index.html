@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
 
-<body>
-    <script type="text/javascript">
-        const app = document.getElementById('app');
-        const header = document.createElement('h1');
-        const text = 'Develop. Preview. Ship.';
-        const headerContent = document.createTextNode(text);
-        header.appendChild(headerContent);
-        app.appendChild(header);
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@latest?dev",
+          "react-dom/client": "https://esm.sh/react-dom@latest/client?dev",
+          "react/jsx-runtime": "https://esm.sh/react@latest/jsx-runtime?dev"
+        }
+      }
     </script>
-</body>
 
+    <script src="https://unpkg.com/@babel/standalone@latest/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel" data-type="module" data-presets="react">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+
+      const domNode = document.getElementById('app');
+      const root = createRoot(domNode);
+
+      root.render(<h1>Develop. Preview. Ship.</h1>);
+    </script>
+  </body>
 </html>
