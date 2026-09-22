@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Curso de React</title>
   <script type="importmap">
     {
       "imports": {
@@ -24,26 +31,26 @@
   import React from "react"
   import { createRoot } from "react-dom/client"
 
-    const domNode = document.getElementById('app');
+  const domNode = document.getElementById('app');
 
-    function Header({ title }) {
-      return <h1>{title ? title : 'Default title'}</h1>;
-    }
+  function Header({ title }) {
+    return <h1>{title ? title : 'Default title'}</h1>;
+  }
 
-    function HomePage() {
-      const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+  function HomePage() {
+    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
-      return (
-        <div>
-          <Header title="Develop. Preview. Ship." />
-          <ul>
-            {names.map((name) => (
-              <li key={name}>{name}</li>
-            ))}
-          </ul>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <Header title="Develop. Preview. Ship." />
+        <ul>
+          {names.map((name) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
 
   const root = createRoot(domNode);
